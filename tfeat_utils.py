@@ -26,11 +26,16 @@ def describe_opencv(model, img, kpts, N, mag_factor, use_gpu = True):
                                  cv2.INTER_CUBIC + cv2.WARP_FILL_OUTLIERS)
 
             patches.append(patch)
-            
+#         print("BeepBooop")
         patches = torch.from_numpy(np.asarray(patches)).float()
         patches = torch.unsqueeze(patches,1)
+#         print("BeepBooop2")
+        
         if use_gpu:
+#             print("BeepBooop-GPU")
             patches = patches.cuda()
+#             print("BeepBooob3")
         descrs = model(patches)
+#         print("BeepBooop4")
         return descrs.detach().cpu().numpy()
         

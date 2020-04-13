@@ -3,7 +3,7 @@ import torch
 import math
 import numpy as np
 
-def describe_opencv(model, img, kpts, N, mag_factor, use_gpu = True):
+def describe_opencv(model, img, kpts, N, mag_factor, use_gpu = False):
         """
         Rectifies patches around openCV keypoints, and returns patches tensor
         """

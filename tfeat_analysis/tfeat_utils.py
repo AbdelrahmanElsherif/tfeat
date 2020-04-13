@@ -35,6 +35,7 @@ def describe_opencv(model, img, kpts, N, mag_factor, use_gpu = False):
 #             print("BeepBooop-GPU")
             patches = patches.cuda()
 #             print("BeepBooob3")
+#         print(patches.shape)
         descrs = model(patches)
 #         print("BeepBooop4")
         return descrs.detach().cpu().numpy()
